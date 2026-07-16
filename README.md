@@ -2,6 +2,8 @@
 
 C200 Keeper is a small, open-source macOS utility that remembers the framing of an **Anker PowerConf C200** webcam and restores it when the camera resets or reconnects.
 
+![C200 Keeper control window](assets/c200-keeper-window.png)
+
 It includes a native Mac control window and menu-bar item with these actions:
 
 - Save the current AnkerWork configuration
