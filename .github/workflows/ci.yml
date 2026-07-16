@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Python tests
+        run: python3 -m unittest -v
+      - name: Build menu app
+        run: ./build_menu_app.sh
+      - name: Validate app
+        run: |
+          plutil -lint "build/C200 Keeper.app/Contents/Info.plist"
+          codesign --verify --deep --strict "build/C200 Keeper.app"
